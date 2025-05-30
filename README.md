@@ -57,11 +57,13 @@ public class SampleAppApplication {
 
 ---
 
-## 🧩 JavaScript 側の使用例（ピュア JS）
+## 🧩 JavaScript 側の使用例
+
+module として読み込む場合
 
 ```html
 <script type="module">
-  import * as formKeeper from "/form-keeper.js";
+  import * as formKeeper from "/form-keeper.min.js";
 
   const id = 1; // e.g. userId
   const viewName = "profileView";
@@ -76,6 +78,27 @@ public class SampleAppApplication {
   });
 
   window.onunload = formKeeper.unobserve;
+</script>
+```
+
+UMD として読み込む場合
+
+```html
+<script src="/form-keeper.umd.min.js"></script>
+<script>
+  const id = 1; // e.g. userId
+  const viewName = "profileView";
+
+  FormKeeper.observe(id, viewName, {
+    beforeRestoreMessage: "編集中の情報が見つかりました。書き戻しますか？",
+  });
+
+  document.querySelector("#send").addEventListener("click", () => {
+    alert("send!");
+    FormKeeper.clear(id, viewName);
+  });
+
+  window.onunload = FormKeeper.unobserve;
 </script>
 ```
 
