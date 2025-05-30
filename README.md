@@ -26,6 +26,37 @@ Thymeleaf などのテンプレートエンジンは不要で、React などの 
 
 ---
 
+## ☕ Java 側の設定例
+
+application.yml
+
+```yaml
+logging:
+  level:
+    jp.co.ysd.spring_form_keeper: INFO
+
+spring:
+  form-keeper:
+    storage: in-memory # local, in-memory, h2, redis
+    ttl: 0 # seconds
+```
+
+アノテーションによる有効化
+
+```java
+@SpringBootApplication
+@EnableFormKeeper
+public class SampleAppApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SampleAppApplication.class, args);
+	}
+
+}
+```
+
+---
+
 ## 🧩 JavaScript 側の使用例（ピュア JS）
 
 ```html
@@ -46,21 +77,6 @@ Thymeleaf などのテンプレートエンジンは不要で、React などの 
 
   window.onunload = formKeeper.unobserve;
 </script>
-```
-
----
-
-## ☕ Java 側の設定例（application.yml）
-
-```yaml
-logging:
-  level:
-    jp.co.ysd.spring_form_keeper: INFO
-
-spring:
-  form-keeper:
-    storage: in-memory # local, in-memory, h2, redis
-    ttl: 0 # seconds
 ```
 
 ---
@@ -91,7 +107,7 @@ GitHub Packages などへの公開を検討中です。
 
 ## 🚀 対応 Java バージョンについて
 
-本ライブラリは Java 17 以上をビルドターゲットとしており、Java 17 以上の環境での利用を推奨しています。
+本ライブラリは Java 17 以上をビルドターゲットとしており、Java 17 以上の環境での利用を推奨しています。  
 これにより、多くの現行環境での互換性を確保しています。
 
 ---
