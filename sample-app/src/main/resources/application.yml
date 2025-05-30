@@ -4,5 +4,5 @@ logging:
 
 spring:
   form-keeper:
-    storage: in-memory # none, in-memory, h2, redis
+    storage: in-memory # local, in-memory, h2, redis
     ttl: 0
