@@ -1,0 +1,13 @@
+{
+  "name": "@ysd/spring-form-keeper",
+  "version": "0.1.0-SNAPSHOT",
+  "scripts": {
+    "build-plane": "tsc",
+    "build-minify": "javascript-obfuscator src/main/resources/static/form-keeper.js --output src/main/resources/static/form-keeper.min.js --compact true --self-defending true --control-flow-flattening true --dead-code-injection true --string-array true --string-array-encoding base64 --split-strings true --rename-globals true",
+    "build": "npm run build-plane && npm run build-minify"
+  },
+  "devDependencies": {
+    "javascript-obfuscator": "^4.1.1",
+    "typescript": "^5.8.3"
+  }
+}

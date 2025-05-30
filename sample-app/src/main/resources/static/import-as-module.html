@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spring FormKeeper Examples</title>
+  <style>
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Spring FormKeeper Examples</h1>
+    <h2>import as module</h2>
+  </header>
+  <main>
+    <div>
+        <label>FamilyName:</label>
+        <input name="familyName" value="Suzuki" />
+    </div>
+    <div>
+       <label>GivenName:</label>
+       <input name="givenName" value="Yuichi" />
+    </div>
+    <div>
+      <label>Gender:</label>
+      <label>
+        <input type="radio" name="gender" value="male" checked>
+        Male
+      </label>
+      <label>
+        <input type="radio" name="gender" value="female">
+        Female
+      </label>
+      <label>
+        <input type="radio" name="gender" value="other">
+        Other
+      </label>
+    </div>
+    <div>
+      <label>Skills:</label>
+      <label>
+        <input type="checkbox" name="skills" value="java" checked>
+        Java
+      </label>
+      <label>
+        <input type="checkbox" name="skills" value="javascript" checked>
+        JavaScript
+      </label>
+      <label>
+        <input type="checkbox" name="skills" value="python">
+        Python
+      </label>
+    </div>
+    <div>
+      <label>Occupation:</label>
+      <select name="occupation">
+        <option value="student">Student</option>
+        <option value="engineer" selected>Engineer</option>
+        <option value="designer">Designer</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div>
+      <label for="bio">Biography:</label><br />
+      <textarea name="biography" rows="4" cols="40">hello! im software engineer!</textarea>
+    </div>
+    <br />
+    <div>
+      <button id="send">SEND</button>
+    </div>
+    <br />
+    <div>
+      <a href="../">back</a>
+    </div>
+  </main>
+</body>
+
+<!-- usage -->
+<script type="module">
+  import * as formKeeper from '/form-keeper.js';
+
+  const id = 1;// e.g. userId
+  const viewName = "profileView";
+
+  formKeeper.observe(id, viewName, {
+    beforeRestoreMessage: '編集中の情報が見つかりました。書き戻しますか？',
+  });
+
+  document.querySelector("#send").addEventListener("click", () => {
+    alert("send!");
+    formKeeper.clear(id, viewName);
+  });
+
+  window.onunload = formKeeper.unobserve;
+</script>
+
+</html>

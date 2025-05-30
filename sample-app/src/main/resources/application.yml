@@ -1,0 +1,8 @@
+logging:
+  level:
+    jp.co.ysd.spring_form_keeper: INFO
+
+spring:
+  form-keeper:
+    storage: in-memory # none, in-memory, h2, redis
+    ttl: 0
