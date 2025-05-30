@@ -33,4 +33,4 @@ build/
 .vscode/
 
 node_modules
-form-keeper*.js
+core/src/main/resources/static/

@@ -10,7 +10,7 @@
 <body>
   <header>
     <h1>Spring FormKeeper Examples</h1>
-    <h2>import as module</h2>
+    <h2>import as UMD</h2>
   </header>
   <main>
     <div>
@@ -76,22 +76,21 @@
 </body>
 
 <!-- usage -->
-<script type="module">
-  import * as formKeeper from '/form-keeper.min.js';
-
+<script src="/form-keeper.umd.min.js"></script>
+<script>
   const id = 1;// e.g. userId
   const viewName = "profileView";
 
-  formKeeper.observe(id, viewName, {
-    beforeRestoreMessage: '編集中の情報が見つかりました。書き戻しますか？',
+  FormKeeper.observe(id, viewName, {
+    beforeRestoreMessage: "編集中の情報が見つかりました。書き戻しますか？",
   });
 
   document.querySelector("#send").addEventListener("click", () => {
     alert("send!");
-    formKeeper.clear(id, viewName);
+    FormKeeper.clear(id, viewName);
   });
 
-  window.onunload = formKeeper.unobserve;
+  window.onunload = FormKeeper.unobserve;
 </script>
 
 </html>

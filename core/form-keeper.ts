@@ -12,7 +12,7 @@ type Option = {
 };
 
 const elementHandlers = new Map<Element, EventListener>();
-const debounceTimers = new Map<string, ReturnType<typeof setTimeout>>();
+const debounceTimers = new Map<string, number>();
 
 export async function observe(
   id: string | number,
