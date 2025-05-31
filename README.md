@@ -1,4 +1,8 @@
-# 📂 Spring FormKeeper
+⚠️ 本リポジトリは開発中に設計方針の課題が明確となり現在はアーカイブ状態です。
+
+> 詳細な背景・技術的課題については [PEND-REASON.md](./PEND-REASON.md) を参照してください。
+
+# 📂 SpringFormKeeper
 
 > **Spring MVC におけるフォームの編集中データを、ほぼ自動で保存・復元できるライブラリ**
 
