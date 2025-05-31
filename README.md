@@ -128,6 +128,7 @@ GitHub Packages などへの公開を検討中です。
 - [ ] `h2` 対応
 - [ ] `localStorage` 対応（JavaScript 側のみで完結する軽量モード）
 - [ ] `redis` 対応（分散環境向け）
+- [ ] React や Vue などのモダンフレームワーク向けモジュールの提供
 - [ ] README.en.md の用意
 
 ---
